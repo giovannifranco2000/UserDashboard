@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
+  standalone: true,
   imports: [
     RouterLink
   ],
@@ -16,9 +17,8 @@ export class UserListComponent {
   public userService = inject(UserService);
   private headerService = inject(HeaderService);
 
-  ngOnInit() {
+  constructor() {
     this.headerService.setTitle("Users");
-    if(this.userService.users().length === 0) this.userService.fetchUsers();
   }
 
 }

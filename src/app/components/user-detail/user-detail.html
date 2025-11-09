@@ -1,1 +1,18 @@
-<p>user-detail works!</p>
+<div class="body">
+    @if(!(user() === undefined)) {
+        <div class="details-card">
+
+            <div>
+                <p>Name: {{user()?.name}}</p>
+                <p>Email: {{user()?.email}}</p>
+                <p>Phone: {{user()?.phone}}</p>
+                <p>Website: {{user()?.website}}</p>
+            </div>
+
+            <div class="card-footer">
+                <a [routerLink]="['/users', user()!.id, 'edit']">Edit User Details</a>
+            </div>
+
+        </div>
+    }
+</div>

@@ -1,21 +1,23 @@
-@if(userService.users().length === 0) {
-    <p>Loading users...</p>
-} @else {
-    <ul class="user-list">
-        <h2 class="list-title">User List</h2>
-        @for(user of userService.users(); track user.id) {
-            <li class="list-element">
-                <div class="user-card">
-                    <div>
-                        <h4>{{ user.name }}</h4>
-                        <p>[{{ user.email }}]</p>
+<div class="body">
+    @if(userService.users().length === 0) {
+        <p>Loading users...</p>
+    } @else {
+        <ul class="user-list">
+            <h2 class="list-title">User List</h2>
+            @for(user of userService.users(); track user.id) {
+                <li class="list-element">
+                    <div class="user-card">
+                        <div>
+                            <h4>{{ user.name }}</h4>
+                            <p>[{{ user.email }}]</p>
+                        </div>
+                        
+                        <div>
+                            <a [routerLink]="['/users', user.id]">View Details</a>
+                        </div>
                     </div>
-                    
-                    <div>
-                        <a [routerLink]="['/users', user.id]">View Details</a>
-                    </div>
-                </div>
-            </li>
-        }
-    </ul>
-}
+                </li>
+            }
+        </ul>
+    }
+</div>

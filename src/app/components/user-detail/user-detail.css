@@ -1,0 +1,23 @@
+.body {
+    min-height: 80vh;
+}
+
+.details-card {
+    padding: calc(2 * var(--unit));
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    font-size: 15pt;
+}
+
+.card-footer {
+    margin-top: calc(2 * var(--unit));
+}
+
+a {
+    background-color: var(--neutral);
+    border-radius: calc(5 * var(--unit));
+    padding: var(--unit);
+}

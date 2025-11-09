@@ -25,7 +25,7 @@ header {
     background-color: inherit;
     margin-left: calc(2 * var(--unit));
     font-size: 20pt;
-    width: calc(20 * var(--unit));
+    min-width: calc(20 * var(--unit));
 }
 
 /* NAVBAR */
