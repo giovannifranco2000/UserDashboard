@@ -1,0 +1,64 @@
+/* HEADER */
+
+header {
+    background-color: var(--darker);
+
+    border-radius: 0 0 var(--unit) var(--unit);
+    padding: calc(1.5 * var(--unit)) 0 calc(1.5 * var(--unit)) 0;
+}
+
+.header-visible {
+    background-color: inherit;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.header-hidden {
+    background-color: inherit;
+    display: flex;
+}
+
+/* HEADER TITLE */
+
+.header-title {
+    background-color: inherit;
+    margin-left: calc(2 * var(--unit));
+    font-size: 20pt;
+    width: calc(20 * var(--unit));
+}
+
+/* NAVBAR */
+
+nav {
+    background-color: inherit;
+    margin: var(--unit) var(--unit) 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR LINKS */
+
+.nav-link {
+    margin: 0 var(--unit) 0 var(--unit);
+    font-size: 12pt;
+}
+
+.link-visited {
+    color: var(--light);
+}
+
+/* MENU ICON */
+
+.menu-icon {
+    margin-left: auto;
+    margin-right: calc(2 * var(--unit));
+
+    background-color: inherit;
+    width: 18pt;
+    height: auto;
+}
+
+.menu-icon:hover {
+    cursor: pointer;
+}

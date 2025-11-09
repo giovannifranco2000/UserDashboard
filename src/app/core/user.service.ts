@@ -13,7 +13,7 @@ export class UserService {
   private http = inject(HttpClient);
   
   private userSource: WritableSignal<User[]> = signal([]);
-  private users: Signal<User[]> = computed(() => this.userSource());
+  public users: Signal<User[]> = computed(() => this.userSource());
 
   public fetchUsers(): void {
     this.http.get<User[]>(this.apiUrl)
