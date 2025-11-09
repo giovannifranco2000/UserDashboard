@@ -1,1 +1,21 @@
-<p>user-edit works!</p>
+<div class="body">
+@if(!(user() === undefined)) {
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+        <label for="name">Name: </label>
+        <input id="name" type="text" formControlName="name">
+
+        <label for="email">Email: </label>
+        <input id="email" type="email" formControlName="email">
+
+        <label for="phone">Phone: </label>
+        <input id="phone" type="text" formControlName="phone">
+
+        <label for="website">Website: </label>
+        <input id="website" type="text" formControlName="website">
+
+        <button type="submit" [disabled]="!editForm.valid">Save changes</button>
+
+    </form>
+}
+</div>

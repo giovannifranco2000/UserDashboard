@@ -1,0 +1,28 @@
+.body {
+    min-height: 80vh;
+}
+
+form {
+    padding: var(--unit);
+}
+
+form input {
+    display: block;
+    padding: var(--unit);
+    border: calc(.1 * var(--unit)) solid var(--neutral);
+    border-radius: var(--unit);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    display: inline;
+    background-color: var(--neutral);
+    border-radius: calc(5 * var(--unit));
+    padding: var(--unit);
+    margin: var(--unit) 0 var(--unit) 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
