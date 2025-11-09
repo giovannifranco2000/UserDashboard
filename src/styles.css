@@ -10,6 +10,7 @@
     --dark: #3d3953;
     --darker: #060124;
     --light: #c578c5;
+    --neutral: #7b4aa3;
 
     background-color: var(--dark);
     color: white;

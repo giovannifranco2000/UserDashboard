@@ -1,3 +1,31 @@
 body {
     min-height: 80vh;
 }
+
+.user-list {
+    padding: calc(2 * var(--unit));
+    list-style-type: none;
+}
+
+.list-title {
+    font-size: 20pt;
+}
+
+.list-element {
+    margin: var(--unit) 0 var(--unit) 0;
+    border-radius: calc(5 * var(--unit));
+    border: calc(.2 * var(--unit)) solid var(--neutral);
+}
+
+.user-card {
+    display: flex;
+    margin: var(--unit) calc(2 * var(--unit)) var(--unit) calc(2 * var(--unit));
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    background-color: var(--neutral);
+    border-radius: calc(5 * var(--unit));
+    padding: var(--unit);
+}
