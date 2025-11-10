@@ -1,16 +1,18 @@
-import { Component, computed, effect, inject, Signal } from '@angular/core';
+import { Component, computed, effect, inject, signal, Signal, WritableSignal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { UserService } from '../../core/user.service';
-import { HeaderService } from '../header/header.service';
 import { User } from '../../core/user.interface';
+import { UserService } from '../../core/user.service';
+import { AlertComponent, Status } from '../alert/alert';
+import { HeaderService } from '../header/header.service';
 
 @Component({
   selector: 'app-user-edit',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AlertComponent
   ],
   templateUrl: './user-edit.html',
   styleUrl: './user-edit.css',
@@ -31,6 +33,9 @@ export class UserEditComponent {
     phone: [''],
     website: ['']
   });
+
+  public alertMessage: WritableSignal<string | null> = signal(null);
+  public alertStatus: WritableSignal<Status> = signal('success');
 
   constructor() {
     const paramMap: Signal<ParamMap | undefined> = toSignal(this.activatedRoute.paramMap);
@@ -58,8 +63,16 @@ export class UserEditComponent {
     if(this.editForm.valid && this.user()) {
       const updatedUser = { ...this.user()!, ...this.editForm.value as Partial<User> };
       this.userService.updateUser(updatedUser);
-      this.router.navigate(['/users', this.user()!.id]);
+      this.alertMessage.set(`User ${updatedUser.name} saved successfully!`);
+      this.alertStatus.set('success');
+    } else {
+      this.alertMessage.set('Form is invalid or user data is missing.');
+      this.alertStatus.set('error');
     }
+  }
+
+  public onAlertClose(): void {
+      this.alertMessage.set(null);
   }
 
 }

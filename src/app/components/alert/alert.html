@@ -1,0 +1,6 @@
+@if (message()) {
+    <div [ngClass]="['alert', status()]">
+        <p>{{ message() }}</p>
+        <button (click)="close.emit()">Close</button>
+    </div>
+}

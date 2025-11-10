@@ -1,4 +1,10 @@
 <div class="body">
+    <app-alert
+        [message]="alertMessage()"
+        [status]="alertStatus()"
+        (close)="onAlertClose()"
+    />
+
 @if(!(user() === undefined)) {
     <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
 

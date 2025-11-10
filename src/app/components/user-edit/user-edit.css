@@ -22,7 +22,3 @@ button {
     padding: var(--unit);
     margin: var(--unit) 0 var(--unit) 0;
 }
-
-button:hover {
-    cursor: pointer;
-}
